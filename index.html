@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwiftCart</title>
+
+    <!-- font Awesome -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- font integration -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- tailwind+daisyui -->
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- stylesheet -->
+
+    <link rel="stylesheet" href="style/style.css">
+
+
+</head>
+
+<body>
+    <header class="bg-base-100 shadow-sm">
+        <div class="navbar max-w-screen-xl items-center justify-center mx-auto px-6 lg:px-0 md:px-0">
+            <div class="navbar-start ">
+                <a class="font-bold text-[#4f39f6] text-2xl">SwiftCart</a>
+            </div>
+            <div class="navbar-center hidden lg:flex ">
+                <ul class="menu menu-horizontal px-1 font-medium">
+                    <li><a>Home</a></li>
+                    <li><a>Products</a></li>
+                    <li><a>About</a></li>
+                    <li><a>Contact</a></li>
+                </ul>
+            </div>
+            <div class="navbar-end">
+                <a class="btn bg-white border-none  hover:bg-gray-200  rounded-full lg:p-3 md:p-3 p-0 "><i
+                        class="fa-solid fa-cart-shopping hover:text-[#4f39f6]"></i></a>
+            </div>
+            <div class="dropdown">
+                <div tabindex="0" role="button"
+                    class="btn  bg-white border-none  hover:bg-gray-200 rounded-full lg:hidden p-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h8m-8 6h16" />
+                    </svg>
+                </div>
+                <ul tabindex="-1"
+                    class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3  w-auto ml-0 pl-0 text-left shadow">
+                    <li><a>Home</a></li>
+                    <li><a>Products</a></li>
+                    <li><a>About</a></li>
+                    <li><a>Contact</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <section>
+<div class="">
+  
+ <div class="space-y-5 ">
+      <img class="w-full" src="./Assets/banner-image.png" alt="">
+      <h1 class=" text-5xl font-bold">Hello there</h1>
+      <p class="">
+        Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
+        quasi. In deleniti eaque aut repudiandae et a id nisi.
+      </p>
+      <button class="btn btn-primary">Get Started</button>
+    </div>
+    </div>
+</div>
+    </section>
+    <script src="./script/index.js"></script>
+</body>
+
+</html>
