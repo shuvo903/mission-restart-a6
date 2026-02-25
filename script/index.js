@@ -28,13 +28,13 @@ const displayProductAllCards = (productsCard) => {
                       <img class="w-full h-96 object-contain p-5" src="${productsCard.image}" alt="image">
                   </div>
                   <div class="card-body text-2xl  text-black font-normal">
-                      <div class="flex justify-between">
-                          <div class="badge bg-[#e0e7ff] text-[#321ecc] rounded-3xl p-3.5 font-semibold mb-3">${productsCard.category}</div>
+                  <div class="flex justify-between">
+                  <div class="badge bg-[#e0e7ff] text-[#321ecc] rounded-3xl p-3.5 font-semibold mb-3">${productsCard.category}</div>
                           <div class="text-lg text-gray-400 font-normal"><i class="fa-solid fa-star text-orange-400 "></i>
                               ${productsCard.rating.rate} (${productsCard.rating.count})
                           </div>
-                      </div>
-                      <h2 class="font-semibold lg:w-80 w-72 truncate ">${productsCard.title}</h2>
+                          </div>
+                      <h2 class="font-semibold lg:text-xl text-lg lg:w-80 w-72 truncate ">${productsCard.title}</h2>
                       <p class="text-2xl text-black font-bold">
                           $${productsCard.price}
                       </p>
@@ -45,6 +45,7 @@ const displayProductAllCards = (productsCard) => {
   
                           <button class="btn flex-1 rounded-lg font-bold btn-primary"><i
                                   class="fa-solid fa-cart-plus"></i>
+                          
                               Add</button>
                       </div>
                   </div>
@@ -52,6 +53,67 @@ const displayProductAllCards = (productsCard) => {
   
   `;
     productCardContainer.append(allCard);
+  });
+};
+
+const trendingNow = () => {
+  const url = "https://fakestoreapi.com/products";
+
+  fetch(url)
+    .then((res) => res.json())
+    .then((data) => displayTrendingNow(data));
+};
+
+const displayTrendingNow = (products) => {
+  const topRated = products
+    .sort((a, b) => b.rating.rate - a.rating.rate)
+    .slice(0, 3);
+
+  const trendingNowCardContainer = document.getElementById("trending-product");
+  if (!trendingNowCardContainer) return;
+
+  trendingNowCardContainer.innerHTML = "";
+
+  topRated.forEach((products) => {
+    const trendingNowCard = document.createElement("div");
+
+    trendingNowCard.className = "trendingNowCard";
+
+    trendingNowCard.innerHTML = `
+      <div class="card bg-white w-auto shadow-md drop-shadow-md hover:drop-shadow-xl">
+        <div class="bg-[#e5e7eb] rounded-t-2xl items-center">
+          <img class="w-full h-96 object-contain p-5" src="${products.image}" alt="image">
+        </div>
+        <div class="card-body text-2xl text-black font-normal">
+          <div class="flex justify-between">
+            <div class="badge bg-[#e0e7ff] text-[#321ecc] rounded-3xl p-3.5 font-semibold mb-3">
+              ${products.category}
+            </div>
+            <div class="text-lg text-gray-400 font-normal">
+              <i class="fa-solid fa-star text-orange-400"></i>
+              ${products.rating.rate} (${products.rating.count})
+            </div>
+          </div>
+          <h2 class="font-semibold lg:text-xl text-lg lg:w-80 w-72 truncate">
+            ${products.title}
+          </h2>
+          <p class="text-2xl text-black font-bold">
+            $${products.price}
+          </p>
+          <div class="card-actions w-full gap-4 flex">
+            <button 
+              class="btn flex-1 rounded-lg border-gray-400 font-bold border-2 text-gray-500 btn-outline">
+              <i class="fa-regular fa-eye"></i> Details
+            </button>
+            <button class="btn flex-1 rounded-lg font-bold btn-primary">
+              <i class="fa-solid fa-cart-plus"></i> Add
+            </button>
+          </div>
+        </div>
+      </div>
+    `;
+
+    trendingNowCardContainer.append(trendingNowCard);
   });
 };
 
@@ -128,7 +190,7 @@ const displayProductCards = (productsCard) => {
                               ${productsCard.rating.rate} (${productsCard.rating.count})
                           </div>
                       </div>
-                      <h2 class="font-semibold lg:w-80 w-72  truncate ">${productsCard.title}</h2>
+                      <h2 class="font-semibold lg:text-xl text-lg lg:w-80 w-72  truncate ">${productsCard.title}</h2>
                       <p class="text-2xl text-black font-bold">
                           $${productsCard.price}
                       </p>
@@ -149,6 +211,8 @@ const displayProductCards = (productsCard) => {
 
 const displayProduct = (products) => {
   const productBtnContainer = document.getElementById("product-btn-container");
+
+  if (!productBtnContainer) return;
 
   productBtnContainer.innerHTML = "";
 
@@ -180,3 +244,4 @@ const displayProduct = (products) => {
 };
 
 loadProduct();
+trendingNow();
