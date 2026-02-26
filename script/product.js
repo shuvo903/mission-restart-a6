@@ -35,7 +35,7 @@ const displayProductAllCards = (productsCard) => {
                               ${productsCard.rating.rate} (${productsCard.rating.count})
                           </div>
                           </div>
-                      <h2 class="font-semibold lg:text-xl text-lg lg:w-80 w-72 truncate ">${productsCard.title}</h2>
+                      <h2 class="font-semibold lg:text-xl text-lg lg:w-80 w-64 truncate ">${productsCard.title}</h2>
                       <p class="text-2xl text-black font-bold">
                           $${productsCard.price}
                       </p>
@@ -144,7 +144,7 @@ const displayProductCards = (productsCard) => {
                               ${productsCard.rating.rate} (${productsCard.rating.count})
                           </div>
                       </div>
-                      <h2 class="font-semibold lg:text-xl text-lg lg:w-80 w-72  truncate ">${productsCard.title}</h2>
+                      <h2 class="font-semibold lg:text-xl text-lg lg:w-80 w-64  truncate ">${productsCard.title}</h2>
                       <p class="text-2xl text-black font-bold">
                           $${productsCard.price}
                       </p>

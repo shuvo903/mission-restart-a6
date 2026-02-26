@@ -38,7 +38,7 @@ const displayTrendingNow = (products) => {
               ${products.rating.rate} (${products.rating.count})
             </div>
           </div>
-          <h2 class="font-semibold lg:text-xl text-lg lg:w-80 w-72 truncate">
+          <h2 class="font-semibold lg:text-xl text-lg lg:w-80 w-64 truncate">
             ${products.title}
           </h2>
           <p class="text-2xl text-black font-bold">
